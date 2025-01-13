@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthORDrink.MVVM.Views.PlayerPage"
+             Title="Spelers Beheren"
+             BackgroundColor="#F9F9F9">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Entry Placeholder="Voer de naam van de speler in" 
+               x:Name="PlayerNameEntry" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#333" 
+               Margin="0,10" />
+
+        <Button Text="Voeg speler toe" 
+                Clicked="OnAddPlayerClicked" 
+                BackgroundColor="#6495ED" 
+                TextColor="White" 
+                CornerRadius="10" />
+
+        <!-- Lijstweergave van spelers -->
+        <Label Text="Spelers:"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Start" />
+        <CollectionView ItemsSource="{Binding Players}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5" Spacing="5">
+                        <!-- Naam van de speler -->
+                        <Label Text="{Binding PlayerName}" FontSize="10" VerticalOptions="Center" />
+
+                        <!-- Bewerken knop -->
+                        <Button Text="Bewerken" 
+                                Command="{Binding Path=BindingContext.OnEditPlayerCommand, Source={x:Reference PlayerPage}}"
+                                CommandParameter="{Binding .}" 
+                                BackgroundColor="Orange" 
+                                TextColor="White" />
+
+                        <!-- Verwijderen knop -->
+                        <Button Text="Verwijderen" 
+                                Command="{Binding Path=BindingContext.OnDeletePlayerCommand, Source={x:Reference PlayerPage}}"
+                                CommandParameter="{Binding .}" 
+                                BackgroundColor="Red" 
+                                TextColor="White" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!-- Terugknop -->
+        <Button Text="Terug"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnBackClicked" />
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthORDrink.MVVM.Views.GamePage"
+             Title="Truth or Drink Game"
+             BackgroundColor="#F9F9F9">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label x:Name="VraagLabel" 
+               Text="Vraag komt hier..." 
+               FontSize="24" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#333" />
+
+        <Picker x:Name="OptiePicker" 
+                IsVisible="False" 
+                HorizontalOptions="FillAndExpand" />
+
+        <Label x:Name="TimerLabel" 
+               Text="Tijd: 60 seconden" 
+               FontSize="18" 
+               IsVisible="False" 
+               HorizontalOptions="Center" 
+               TextColor="#FF4500" />
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+            <Button Text="Truth" 
+                    Clicked="OnTruthClicked" 
+                    BackgroundColor="#FF7F50" 
+                    TextColor="White" 
+                    CornerRadius="10" />
+
+            <Button Text="Drink" 
+                    Clicked="OnDrinkClicked" 
+                    BackgroundColor="#6495ED" 
+                    TextColor="White" 
+                    CornerRadius="10" />
+
+            <Button Text="Doen" 
+                    Clicked="OnDoenClicked" 
+                    BackgroundColor="#32CD32" 
+                    TextColor="White" 
+                    CornerRadius="10" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

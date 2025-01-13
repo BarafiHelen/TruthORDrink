@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthORDrink.MVVM.Views.QuestionPage"
+             Title="Vragen Beheren"
+             BackgroundColor="#F9F9F9">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Entry Placeholder="Vraag inhoud" 
+               x:Name="QuestionContentEntry" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#333" 
+               Margin="0,10" />
+
+        <Entry Placeholder="Categorie" 
+               x:Name="QuestionCategoryEntry" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#333" 
+               Margin="0,10" />
+
+        <Entry Placeholder="Niveau" 
+               x:Name="QuestionLevelEntry" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#333" 
+               Margin="0,10" />
+
+        <Button Text="Vraag toevoegen" 
+                Clicked="OnAddQuestionClicked" 
+                BackgroundColor="#32CD32" 
+                TextColor="White" 
+                CornerRadius="10" />
+
+        <ListView x:Name="QuestionListView" 
+                  ItemsSource="{Binding Questions}" 
+                  BackgroundColor="#FFFFFF" 
+                  Margin="0,10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Content}" Detail="{Binding Category}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthORDrink.MVVM.Views.HomePage"
+             Title="Truth Or Drink"
+             BackgroundColor="#F4F4F9">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="Welkom bij
+               Truth Or Drink"
+               FontSize="40"
+               HorizontalOptions="Center"
+               TextColor="#333"
+               FontAttributes="Bold" />
+
+        <Button Text="Start Nieuwe Sessie"
+                Clicked="OnStartNewSessie_Clicked"
+                BackgroundColor="#FF7F50"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="50" />
+
+        <Button Text="Share QrCode"
+                Clicked="OnShareQrCode_Clicked"
+                BackgroundColor="#6495ED"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="50" />
+
+        
+    </VerticalStackLayout>
+</ContentPage>

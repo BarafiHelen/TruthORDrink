@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruthORDrink.MVVM.Views.NewSessionPage"
+             Title="Nieuwe Sessie"
+             BackgroundColor="#F4F4F9">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Maak een Nieuwe Sessie" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               FontAttributes="Bold" />
+
+        <Entry x:Name="SessieNaam" 
+               Placeholder="Naam van de sessie" 
+               BackgroundColor="#FFFFFF" 
+               TextColor="#333" 
+               Margin="0,10" />
+
+        <Picker x:Name="CategoriePicker" 
+                Title="Kies een Categorie"
+                BackgroundColor="#FFFFFF"
+                TextColor="#333">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Normaal</x:String>
+                    <x:String>Gewaagd</x:String>
+                    <x:String>Extreem</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Niveau (1-5)" FontSize="16" />
+        <Slider x:Name="NiveauSlider" Minimum="1" Maximum="5" Value="3" />
+        <Label Text="{Binding Source={x:Reference NiveauSlider}, Path=Value, StringFormat='Niveau: {0:F0}'}" />
+
+        <Button Text="Beheer Spelers" 
+                Clicked="OnManagePlayersClicked" 
+                BackgroundColor="#6495ED" 
+                TextColor="White" 
+                CornerRadius="10" />
+
+        <Button Text="Beheer Vragen" 
+                Clicked="OnManageQuestionsClicked" 
+                BackgroundColor="#32CD32" 
+                TextColor="White" 
+                CornerRadius="10" />
+
+        <Button Text="Start Spel" 
+                Clicked="OnStartGameClicked" 
+                BackgroundColor="#FF7F50" 
+                TextColor="White" 
+                CornerRadius="10" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TruthORDrink.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TruthORDrink"
+    xmlns:views="clr-namespace:TruthORDrink.MVVM.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="TruthORDrink">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Manage Questions"
+        ContentTemplate="{DataTemplate views:QuestionPage}"
+        Route="QuestionPage" />
+    <ShellContent
+        Title="Manage Players"
+        ContentTemplate="{DataTemplate views:PlayerPage}"
+        Route="PlayerPage" />
+</Shell>
